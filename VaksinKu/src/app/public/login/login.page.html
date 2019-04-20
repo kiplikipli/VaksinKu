@@ -1,0 +1,25 @@
+<ion-content padding class="bgstyle">
+  <div>
+    <div>
+        <div style="display: flex; justify-content: center; margin-top:50px; margin-bottom:20px;">
+            <img src="" width="150" height="150">
+        </div>
+        
+        <ion-item text-center>
+          <ion-input type="text" value="" placeholder="Username"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item text-center>
+          <ion-input type="password" value="" placeholder="Password"></ion-input>
+        </ion-item>
+
+    </div>
+
+    <div id="login">
+        <ion-button (click)="login()" expand="block" fill="solid" shape="round" >Login</ion-button>
+    </div>
+    <div id="signup" text-center style="margin-top:20px;">
+      <a style="color:white" href="/register" routerDirection="forward">Register</a>
+    </div>
+  </div>
+</ion-content>

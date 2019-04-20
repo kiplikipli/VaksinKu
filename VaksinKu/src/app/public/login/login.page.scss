@@ -1,0 +1,40 @@
+ion-content{
+    --background : #015877;
+  }
+  ion-item{
+    --background : #002A3C;
+    display:flex;
+  }
+  ion-button{
+    --background : #00FFF7;
+    --color : white;
+  }
+  ion-label{
+    margin:auto;
+  }
+  ion-input{
+    --placeholder-color:white;
+    --color : white;
+  }
+  ion-thumbnail{
+    --size : ;
+  }
+  #login{
+    position:relative;
+    text-align:center;
+    width:200px;
+    margin:auto;
+    margin-top: 10%;
+  }
+  #signup{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top : 3%;
+    font-size: 12px;
+    color : black;
+  }
+  
+  .bgstyle{
+    background: #000000;
+    margin:auto;
+  }
