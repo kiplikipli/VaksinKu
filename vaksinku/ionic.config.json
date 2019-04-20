@@ -1,7 +1,0 @@
-{
-  "name": "vaksinku",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
