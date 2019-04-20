@@ -31,9 +31,6 @@ export class AppComponent {
         if(state){
           this.router.navigate(['members', 'umum']);
         }
-        else{
-          this.router.navigate(['login']);
-        }
       });
     });
   }

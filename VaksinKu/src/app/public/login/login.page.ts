@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private authService : AuthenticationService) { }
+  constructor(private authService : AuthenticationService, public routes : Router) { }
 
   ngOnInit() {
   }
 
   login(){
     this.authService.login();
+  }
+
+  register(){
+    this.routes.navigate(['register']);
   }
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UmumPage implements OnInit {
 
-  constructor(private authService : AuthenticationService) { }
+  constructor(private authService : AuthenticationService, public routes : Router) { }
 
   ngOnInit() {
   }
 
   logout(){
     this.authService.logout();
+    this.routes.navigate(['login']);
   }
 }
