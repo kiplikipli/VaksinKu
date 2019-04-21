@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
     this.authService.login();
   }
 
-  register(){
-    this.routes.navigate(['register']);
+  forgotPassword(){
+    this.routes.navigate(['forgot-password']);
   }
 }

@@ -6,20 +6,22 @@
         </div>
         
         <ion-item text-center>
-          <ion-input type="text" value="" placeholder="Email or Username"></ion-input>
+          <ion-input type="text" value="" placeholder="Email atau Username"></ion-input>
         </ion-item>
         <br>
         <ion-item text-center>
-          <ion-input type="password" value="" placeholder="Password"></ion-input>
+          <ion-input type="password" value="" placeholder="Kata Sandi"></ion-input>
         </ion-item>
 
     </div>
 
+    <div id="signup" text-right>
+        <a style="color:black; margin-top:10%;" (click)="forgotPassword()" routerDirection="forward" >Lupa Kata Sandi ?</a>
+    </div>
+
     <div id="login">
-        <ion-button (click)="login()" expand="block" fill="solid" shape="round" >Login</ion-button>
+        <ion-button (click)="login()" expand="block" fill="solid" shape="round">Masuk</ion-button>
     </div>
-    <div id="signup" text-center style="margin-top:20px;">
-      <a style="color:black" (click)="register()" routerDirection="forward">Register</a>
-    </div>
+    
   </div>
 </ion-content>
