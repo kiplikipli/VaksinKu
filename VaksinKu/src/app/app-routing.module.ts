@@ -13,11 +13,11 @@ const routes: Routes = [
     loadChildren: './members/member-routing.module#MemberRoutingModule'
   },
   { path: 'forgot-password', loadChildren: './public/forgot-password/forgot-password.module#ForgotPasswordPageModule' },
-  { path: 'home', loadChildren: './tabs/home/home.module#HomePageModule' },
   { path: 'notifications', loadChildren: './tabs/notifications/notifications.module#NotificationsPageModule' },
   { path: 'profile', loadChildren: './tabs/profile/profile.module#ProfilePageModule' },
   { path: 'slides', loadChildren: './slides/slides.module#SlidesPageModule' },
-  { path: 'tabs', loadChildren: './tabs/tabs/tabs.module#TabsPageModule' },  { path: 'news', loadChildren: './news/news.module#NewsPageModule' }
+  { path: 'tabs', loadChildren: './tabs/tabs/tabs.module#TabsPageModule' },
+  { path: 'news', loadChildren: './news/news.module#NewsPageModule' }
 
 ];
 
