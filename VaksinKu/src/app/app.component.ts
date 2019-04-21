@@ -29,7 +29,7 @@ export class AppComponent {
       this.authService.authenticationState.subscribe(state =>{
         console.log('Auth Changed :', state);
         if(state){
-          this.router.navigate(['members', 'umum']);
+          this.router.navigate(['tabs']);
         }
       });
     });

@@ -3,13 +3,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from './services/auth-guard.service'
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'slides', pathMatch: 'full' },
   { path: 'login', loadChildren: './public/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './public/register/register.module#RegisterPageModule' },
-  { path: 'posyandu', loadChildren: './members/posyandu/posyandu.module#PosyanduPageModule' },
   {
     path : 'members',
-    canActivate : [AuthGuardService],
+    canActivate : [AuthGuardService], 
     loadChildren: './members/member-routing.module#MemberRoutingModule'
   },
   { path: 'forgot-password', loadChildren: './public/forgot-password/forgot-password.module#ForgotPasswordPageModule' },

@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'umum', loadChildren: './umum/umum.module#UmumPageModule' },
+  { path: 'posyandu', loadChildren: './members/posyandu/posyandu.module#PosyanduPageModule' }
 ];
 
 @NgModule({
