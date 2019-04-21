@@ -1,23 +1,12 @@
 <ion-tabs>
-
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>Home</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="notifications">
-        <ion-icon name="notifications"></ion-icon>
-        <ion-label>Notifications</ion-label>
-        <ion-badge>3</ion-badge>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="profile">
-        <ion-icon name="contact"></ion-icon>
-        <ion-label>Profile</ion-label>
-      </ion-tab-button>
-  
-    </ion-tab-bar>
-  
-  </ion-tabs>
+  <ion-tab-button label="home" icon="sunny" href="/tabs/(home:home)">
+    <ion-router-outlet name="home"></ion-router-outlet>
+  </ion-tab-button>
+  <ion-tab-button label="notifications" icon="sunny" href="/tabs/(notifications:notifications)">
+    <ion-router-outlet name="notifications"></ion-router-outlet>
+  </ion-tab-button>
+  <ion-tab-button label="profile" icon="sunny" href="/tabs/(profile:profile)">
+    <ion-router-outlet name="profile"></ion-router-outlet>
+  </ion-tab-button>
+</ion-tabs>
   

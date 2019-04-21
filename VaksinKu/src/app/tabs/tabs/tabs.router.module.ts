@@ -1,43 +1,29 @@
+import { HomePage } from './../home/home.page';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { NotificationsPage } from '../notifications/notifications.page';
+import { ProfilePage } from '../profile/profile.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
-    component: TabsPage,
-    children: [
+    path : 'tabs',
+    component : TabsPage,
+    children : [
       {
-        path: 'home',
-        children: [
-          {
-            path: '',
-            loadChildren: '../home/home.module#HomePageModule'
-          }
-        ]
+        path : 'home',
+        outlet : 'home',
+        component : HomePage
       },
       {
-        path: 'notifications',
-        children: [
-          {
-            path: '',
-            loadChildren: '../notifications/notifications.module#NotificationsPageModule'
-          }
-        ]
+        path : 'notifications',
+        outlet : 'notifications',
+        component : NotificationsPage
       },
       {
-        path: 'profile',
-        children: [
-          {
-            path: '',
-            loadChildren: '../profile/profile.module#ProfilePageModule'
-          }
-        ]
-      },
-      {
-        path: '',
-        redirectTo: '/tabs/home',
-        pathMatch: 'full'
+        path : 'profile',
+        outlet : 'profile',
+        component : ProfilePage
       }
     ]
   },
