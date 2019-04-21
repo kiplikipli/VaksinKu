@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'notifications', loadChildren: './tabs/notifications/notifications.module#NotificationsPageModule' },
   { path: 'profile', loadChildren: './tabs/profile/profile.module#ProfilePageModule' },
   { path: 'slides', loadChildren: './slides/slides.module#SlidesPageModule' },
-  { path: 'tabs', loadChildren: './tabs/tabs/tabs.module#TabsPageModule' }
+  { path: 'tabs', loadChildren: './tabs/tabs/tabs.module#TabsPageModule' },  { path: 'news', loadChildren: './news/news.module#NewsPageModule' }
+
 ];
 
 @NgModule({
