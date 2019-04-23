@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'profile', loadChildren: './tabs/profile/profile.module#ProfilePageModule' },
   { path: 'slides', loadChildren: './slides/slides.module#SlidesPageModule' },
   { path: 'tabs', loadChildren: './tabs/tabs/tabs.module#TabsPageModule' },
-  { path: 'news', loadChildren: './news/news.module#NewsPageModule' }
+  { path: 'news', loadChildren: './tabs/news/news.module#NewsPageModule' }
 
 ];
 

@@ -21,6 +21,10 @@ const routes: Routes = [
         canActivate : [AuthGuardService], 
         loadChildren: './../../members/umum/umum.module#UmumPageModule' 
       },
+      {
+        path : 'news',
+        loadChildren : '../news/news.module#NewsPageModule'
+      }
     ]
   },
   {
