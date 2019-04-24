@@ -1,0 +1,37 @@
+ion-button{
+  --background : #F683FA;
+  --color : white;
+}
+ion-label{
+  margin:auto;
+}
+ion-input{
+  width: 50%;
+  --placeholder-color:black;
+  --color : black;
+}
+#login{
+  position:relative;
+  text-align:center;
+  width:200px;
+  margin:auto;
+  margin-top: 10%;
+}
+#signup{
+  margin-left:auto;
+  margin-right:auto;
+  margin-top : 3%;
+  font-size: 12px;
+  color : black;
+}
+#container{
+    padding: 10%;
+    margin-top:20%;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.bgstyle{
+  background: #000000;
+  margin:auto;
+}

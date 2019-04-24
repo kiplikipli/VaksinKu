@@ -4,26 +4,26 @@
       <div style="display: flex; justify-content: center; margin-bottom:20px;">
         <img src="" width="150" height="150">
       </div>
-
+      
       <ion-item text-center>
-        <ion-input type="text" value="" placeholder="Email atau Username"></ion-input>
+        <ion-input type="text" value="" placeholder="Email or Username"></ion-input>
       </ion-item>
       <br>
       <ion-item text-center>
-        <ion-input type="password" value="" placeholder="Kata Sandi"></ion-input>
+        <ion-input type="password" value="" placeholder="Password"></ion-input>
       </ion-item>
 
     </div>
 
-    <div id="signup" text-right>
-      <a style="color:black; margin-top:10%;" (click)="forgotPassword()" routerDirection="forward">Lupa Kata Sandi ?</a>
+    <div id="forgotpassword" text-right>
+      <a style="color:black;" (click)="forgotPassword()" routerDirection="forward">Forgot Password ?</a>
     </div>
 
     <div id="login">
       <ion-button (click)="login()" expand="block" fill="solid" shape="round">Masuk</ion-button>
     </div>
-    <div id="login">
-      <a style="color:black; margin-top:10%;" (click)="goRegister()" routerDirection="forward">Don't have account ?
+    <div id="register">
+      <a style="color:black;" (click)="goRegister()" routerDirection="forward">Don't have account ?
         Register!</a>
     </div>
 

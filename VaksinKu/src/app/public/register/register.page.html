@@ -7,6 +7,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="bgstyle">
+  <div id="container">
 
+    <ion-item>
+      <ion-input type="text" value="" placeholder="Username"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input type="password" value="" placeholder="Password"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input type="text" value="" placeholder="Email"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input type="text" value="" placeholder="Confirm Email"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input type="number" value="" placeholder="Phone Number"></ion-input>
+    </ion-item>
+
+    <div id="login">
+      <ion-button (click)="register()" expand="block" fill="solid" shape="round">Daftar</ion-button>
+    </div>
+
+  </div>
 </ion-content>
