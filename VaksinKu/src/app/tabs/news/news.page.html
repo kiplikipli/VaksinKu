@@ -7,32 +7,11 @@
 </ion-header>
 
 <ion-content>
- <ion-card button>
-  <ion-card-header>
-    <ion-card-subtitle>Berita</ion-card-subtitle>
-    <ion-img src="/assets/shapes.svg"></ion-img>
-    <ion-button fill="outline" slot="end">read more</ion-button>
-    <ion-card-title>10 Fakta kipli jago banget,No 4 bikin melongo
-    </ion-card-title>
-  </ion-card-header>
-
+ <ion-card *ngFor="let article of data?.articles" (click)="goSingleNews(article)">
+   <ion-img [src]="article.urlToImage"></ion-img>
   <ion-card-content>
-    kipli dengan nama lengkap zulkifli ganteng banget........
+    <ion-card-title>{{article.title}}</ion-card-title>
   </ion-card-content>
-  <ion-button size="2" (click)="turncating = false">show more</ion-button>
-<ion-button (click)="turncating = true">show less</ion-button>
-</ion-card>
-<ion-card button>
-  <ion-card-header>
-    <ion-card-subtitle>Berita</ion-card-subtitle>
-    <ion-img src="/assets/shapes.svg"></ion-img>
-    <ion-button fill="outline" slot="end">read more</ion-button>
-    <ion-card-title>10 Fakta kipli jago banget,No 4 bikin melongo</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    kipli dengan nama lengkap zulkifli ganteng banget........
-  </ion-card-content>
-</ion-card>
+ </ion-card>
 
 </ion-content>
