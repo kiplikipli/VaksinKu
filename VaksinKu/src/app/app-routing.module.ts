@@ -17,7 +17,9 @@ const routes: Routes = [
   { path: 'slides', loadChildren: './slides/slides.module#SlidesPageModule' },
   { path: 'tabs', loadChildren: './tabs/tabs/tabs.module#TabsPageModule' },
   { path: 'news', loadChildren: './tabs/news/news.module#NewsPageModule' },
-  { path: 'news-single', loadChildren: './tabs/news-single/news-single.module#NewsSinglePageModule' }
+  { path: 'news-single', loadChildren: './tabs/news-single/news-single.module#NewsSinglePageModule' },
+  { path: 'loading-example', loadChildren: './loading-example/loading-example.module#LoadingExamplePageModule' }
+
 
 
 ];

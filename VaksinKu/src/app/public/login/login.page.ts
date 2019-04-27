@@ -1,3 +1,4 @@
+import { LoadingService } from './../../loading-example/loading.service';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,13 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private authService : AuthenticationService, public routes : Router) { }
+  constructor(
+    private authService : AuthenticationService, 
+    public routes : Router, 
+    private loading : LoadingService
+    ) { }
 
   ngOnInit() {
   }
 
   login(){
-    this.authService.login();
+    this.authService.login()
+    this.loading.presentLoadingWithOptions();
   }
 
   goRegister(){

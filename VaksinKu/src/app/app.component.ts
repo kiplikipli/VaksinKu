@@ -1,3 +1,4 @@
+import { LoadingService } from './loading-example/loading.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,7 +17,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private authService: AuthenticationService,
-    private router : Router
+    private router : Router,
+    private loading : LoadingService
   ) {
     this.initializeApp();
   }
