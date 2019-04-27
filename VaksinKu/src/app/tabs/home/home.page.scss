@@ -4,12 +4,15 @@
 
 .bottomleft {
   position: absolute;
+  width : 100%;
   text-align:left;
   font-weight:bold;
   color : white;
+  background-color: rgba(0,0,0,.5);
   bottom: 8px;
-  left: 16px;
-  font-size: 18px;
+  left: 5px;
+  right : 5px;
+  font-size: 15px;
 }
 
 img { 
