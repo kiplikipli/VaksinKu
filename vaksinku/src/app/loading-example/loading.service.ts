@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoadingService {
 
-  constructor(public loadingController: LoadingController) {}
+  constructor(public loadingController: LoadingController) { }
 
   async presentLoading() {
     const loading = await this.loadingController.create({
@@ -31,9 +31,9 @@ export class LoadingService {
     return await loading.present();
   }
 
-  async loginLoading() {
+  async registerLoading() {
     const loading = await this.loadingController.create({
-      message: 'Please Wait..',
+      message: 'Register Success!!',
       duration: 2000
     });
     await loading.present();

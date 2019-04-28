@@ -1,3 +1,4 @@
+import { AlertService } from './../../services/alert.service';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { LoadingService } from './../../loading-example/loading.service';
@@ -24,7 +25,8 @@ export class LoginPage implements OnInit {
     public routes: Router,
     private loading: LoadingService,
     public afAuth: AngularFireAuth,
-    public http: HttpClient
+    public http: HttpClient,
+    private alert: AlertService
   ) {
     this.testApi();
   }
@@ -42,12 +44,21 @@ export class LoginPage implements OnInit {
     const { email, password } = this
     try {
       const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      this.authService.login()
+      this.loading.presentLoadingWithOptions();
     }
     catch (err) {
       console.dir(err)
+      /*if (err.code === "auth/invalid-email") {
+        this.alert.presentAlertInvalidEmail();
+      } else if (err.code === "auth/wrong-password") {
+        this.alert.presentAlertWrongPassword();
+      } else if (err.code === "auth/user-not-found") {
+
+      }*/
+      this.alert.presentAlert(err.code);
     }
-    this.authService.login()
-    this.loading.presentLoadingWithOptions();
+
   }
 
   goRegister() {

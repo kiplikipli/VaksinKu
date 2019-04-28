@@ -1,3 +1,5 @@
+import { LoadingService } from './../../loading-example/loading.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
@@ -13,7 +15,7 @@ export class RegisterPage implements OnInit {
   password: string = ""
   cpassword: string = ""
 
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(public afAuth: AngularFireAuth, private routes: Router, private loading: LoadingService) { }
 
   ngOnInit() {
   }
@@ -26,7 +28,8 @@ export class RegisterPage implements OnInit {
 
     try {
       const res = await this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      console.log(res)
+      this.loading.registerLoading();
+      this.routes.navigate(['login']);
     } catch (error) {
       console.dir(error)
     }
