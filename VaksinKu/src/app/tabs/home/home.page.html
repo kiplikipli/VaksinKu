@@ -7,7 +7,7 @@
 </ion-header>
 <ion-content>
   <div>
-    <ion-slides pager="true" [options]="sliderConfig">
+    <ion-slides #mySlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)" pager="true" [options]="sliderConfig" >
       <ion-slide *ngFor="let article of data?.articles | slice:0:5; let i=index" (click)="goSingleNews(article)">
         <div class="container">
           <img [src]="article.urlToImage" alt="Cinque Terre" width="1000" height="300">

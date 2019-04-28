@@ -13,7 +13,11 @@ export class HomePage implements OnInit {
   constructor(private sliderService : HomeSliderService, private routes : Router) { }
 
   sliderConfig = {
-    
+
+  }
+
+  slidesDidLoad(slides) {
+    slides.startAutoplay();
   }
 
   ngOnInit() {
@@ -24,8 +28,7 @@ export class HomePage implements OnInit {
   }
 
   goSingleNews(article){
-    this.sliderService.currentArticle = article;
-    this.routes.navigate(['news-single']);
+    this.routes.navigate(['tabs','tabs','news']);
   }
 
 }
