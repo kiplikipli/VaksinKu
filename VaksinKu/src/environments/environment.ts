@@ -4,8 +4,17 @@
 
 export const environment = {
   production: false,
-  apiUrl :'https://newsapi.org/v2',
-  apiKey : '3322d4d84cd24bb0a1270b2bc25110d1'
+  apiVaksinku: 'http://apivaksinku.atspace.cc/db_connect.php',
+  apiUrl: 'https://newsapi.org/v2',
+  apiKey: '3322d4d84cd24bb0a1270b2bc25110d1',
+  firebase: {
+    apiKey: "AIzaSyCX1X7_2xX-LImhR8pNAkXmnOBAYqcp2sw",
+    authDomain: "vaksinku-rpl.firebaseapp.com",
+    databaseURL: "https://vaksinku-rpl.firebaseio.com",
+    projectId: "vaksinku-rpl",
+    storageBucket: "vaksinku-rpl.appspot.com",
+    messagingSenderId: "904129342205"
+  }
 };
 
 /*
