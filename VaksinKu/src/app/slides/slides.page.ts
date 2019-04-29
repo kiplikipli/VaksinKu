@@ -13,7 +13,7 @@ export class SlidesPage implements OnInit {
   ngOnInit() {
   }
 
-  goLogin(){
-    this.routes.navigate(['login']);
+  goHome(){
+    this.routes.navigate(['tabs']);
   }
 }

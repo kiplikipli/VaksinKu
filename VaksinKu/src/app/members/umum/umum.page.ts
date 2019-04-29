@@ -8,14 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./umum.page.scss'],
 })
 export class UmumPage implements OnInit {
+  imageURL: any;
 
-  constructor(private authService : AuthenticationService, public routes : Router) { }
+  constructor(private authService: AuthenticationService, public routes: Router) { }
 
   ngOnInit() {
   }
 
-  logout(){
+  logout() {
     this.authService.logout();
-    this.routes.navigate(['login']);
+    this.routes.navigate(['tabs']);
   }
+
+  changeProfilePicture() {
+    this.routes.navigate(['members', 'uploader']);
+  }
+
 }

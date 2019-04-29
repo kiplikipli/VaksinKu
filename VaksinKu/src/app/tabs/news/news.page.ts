@@ -14,7 +14,7 @@ export class NewsPage implements OnInit {
   constructor(private newsService : NewsService, private route : Router) { }
 
   ngOnInit() {
-    this.newsService.getNews('everything?q=vaksin').subscribe(data=>{
+    this.newsService.getNews('everything?q=vaksin&q=imunisasi').subscribe(data=>{
       console.log(data);
       this.data = data;
     })

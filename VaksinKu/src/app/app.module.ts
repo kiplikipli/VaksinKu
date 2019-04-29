@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { HttpModule } from '@angular/http'
+import { UserService } from './services/user.service';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,12 +28,15 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     IonicStorageModule.forRoot(),
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    HttpModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    UserService
   ],
   bootstrap: [AppComponent]
 })

@@ -8,12 +8,12 @@ export const environment = {
   apiUrl: 'https://newsapi.org/v2',
   apiKey: '3322d4d84cd24bb0a1270b2bc25110d1',
   firebase: {
-    apiKey: "AIzaSyCX1X7_2xX-LImhR8pNAkXmnOBAYqcp2sw",
-    authDomain: "vaksinku-rpl.firebaseapp.com",
-    databaseURL: "https://vaksinku-rpl.firebaseio.com",
-    projectId: "vaksinku-rpl",
-    storageBucket: "vaksinku-rpl.appspot.com",
-    messagingSenderId: "904129342205"
+    apiKey: "AIzaSyCDimL9ToJzukUCTQchCKs1hWojpujHz_M",
+    authDomain: "vaksinku-1104f.firebaseapp.com",
+    databaseURL: "https://vaksinku-1104f.firebaseio.com",
+    projectId: "vaksinku-1104f",
+    storageBucket: "vaksinku-1104f.appspot.com",
+    messagingSenderId: "917995819797"
   }
 };
 

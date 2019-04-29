@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class AlertService {
 
   data: any;
 
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController, private routes: Router) { }
 
   async presentAlertInvalidEmail() {
     const alert = await this.alertController.create({
@@ -47,6 +48,25 @@ export class AlertService {
     } else if (errorcode === "auth/user-not-found") {
       const alert = await this.alertController.create({
         message: '<strong>User Not Found!</strong>',
+        buttons: ['OK']
+      });
+      await alert.present();
+    } else if (errorcode === "not-login-yet") {
+      const alert = await this.alertController.create({
+        message: '<strong>Please Login First!</strong>',
+        buttons: ['OK']
+      });
+      await alert.present();
+      this.routes.navigate(['login']);
+    } else if (errorcode === "password-doesnt-match") {
+      const alert = await this.alertController.create({
+        message: '<strong>Password Doesnt Match!</strong>',
+        buttons: ['OK']
+      });
+      await alert.present();
+    } else if (errorcode === "auth/email-already-in-use") {
+      const alert = await this.alertController.create({
+        message: '<strong>Email already in use by another account!</strong>',
         buttons: ['OK']
       });
       await alert.present();

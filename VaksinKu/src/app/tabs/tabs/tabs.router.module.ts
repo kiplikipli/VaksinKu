@@ -14,6 +14,7 @@ const routes: Routes = [
       },
       { 
         path: 'notifications', 
+        canActivate : [AuthGuardService], 
         loadChildren: '../notifications/notifications.module#NotificationsPageModule' 
       },
       { 

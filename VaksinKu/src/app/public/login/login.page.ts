@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { AlertService } from './../../services/alert.service';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -26,15 +27,10 @@ export class LoginPage implements OnInit {
     private loading: LoadingService,
     public afAuth: AngularFireAuth,
     public http: HttpClient,
-    private alert: AlertService
+    private alert: AlertService,
+    public user: UserService
   ) {
-    this.testApi();
-  }
 
-  testApi() {
-    this.http.get(`${API_URL}/`).subscribe(data => {
-      console.log(data);
-    });
   }
 
   ngOnInit() {
@@ -44,18 +40,18 @@ export class LoginPage implements OnInit {
     const { email, password } = this
     try {
       const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password)
-      this.authService.login()
-      this.loading.presentLoadingWithOptions();
+
+      if (res.user) {
+        this.user.setUser({
+          email,
+          uid: res.user.uid
+        })
+        this.authService.login()
+        this.loading.presentLoadingWithOptions();
+      }
     }
     catch (err) {
       console.dir(err)
-      /*if (err.code === "auth/invalid-email") {
-        this.alert.presentAlertInvalidEmail();
-      } else if (err.code === "auth/wrong-password") {
-        this.alert.presentAlertWrongPassword();
-      } else if (err.code === "auth/user-not-found") {
-
-      }*/
       this.alert.presentAlert(err.code);
     }
 
