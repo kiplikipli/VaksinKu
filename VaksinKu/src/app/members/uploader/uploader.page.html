@@ -17,10 +17,10 @@
     </label>
     <input id="file-upload" type="file" (change)="fileChanged($event)">
   </div>
-  <div *ngIf="imageURL">
+  <div *ngIf="imageURL" class="gambar">
     <img src="https://ucarecdn.com/{{imageURL}}/">
     <br>
-    <ion-button (click)="confirmPicture()">
+    <ion-button expand="block" (click)="confirmPicture()">
       Confirm
     </ion-button>
   </div>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Schedule Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Hari/Tanggal</ion-label>
+    <ion-input [(ngModel)]="schedule.hari"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Waktu</ion-label>
+    <ion-input [(ngModel)]="schedule.waktu"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">List Vaksin</ion-label>
+    <ion-input [(ngModel)]="schedule.listvaksin"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Tempat</ion-label>
+    <ion-input [(ngModel)]="schedule.tempat"></ion-input>
+  </ion-item>
+</ion-content>
+
+<ion-footer *ngIf="!schedule.id">
+  <ion-toolbar color="success">
+    <ion-button expand="full" fill="clear" color="light" (click)="addSchedule()">
+      <ion-icon name="checkmark" slot="start"></ion-icon>
+      Add Schedule
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-footer *ngIf="schedule.id">
+  <ion-row no-padding text-center>
+    <ion-col size="6">
+      <ion-button expand="block" fill="outline" color="danger" (click)="deleteSchedule()">
+        <ion-icon name="trash" slot="start"></ion-icon>
+        Delete
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" fill="solid" color="success" (click)="updateSchedule()">
+        <ion-icon name="save" slot="start"></ion-icon>
+        Update
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

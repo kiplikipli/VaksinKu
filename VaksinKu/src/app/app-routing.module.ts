@@ -7,8 +7,8 @@ const routes: Routes = [
   { path: 'login', loadChildren: './public/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './public/register/register.module#RegisterPageModule' },
   {
-    path : 'members',
-    canActivate : [AuthGuardService], 
+    path: 'members',
+    canActivate: [AuthGuardService],
     loadChildren: './members/member-routing.module#MemberRoutingModule'
   },
   { path: 'forgot-password', loadChildren: './public/forgot-password/forgot-password.module#ForgotPasswordPageModule' },
@@ -18,7 +18,11 @@ const routes: Routes = [
   { path: 'tabs', loadChildren: './tabs/tabs/tabs.module#TabsPageModule' },
   { path: 'news', loadChildren: './tabs/news/news.module#NewsPageModule' },
   { path: 'news-single', loadChildren: './tabs/news-single/news-single.module#NewsSinglePageModule' },
-  { path: 'loading-example', loadChildren: './loading-example/loading-example.module#LoadingExamplePageModule' }
+  { path: 'loading-example', loadChildren: './loading-example/loading-example.module#LoadingExamplePageModule' },
+  { path: 'schedule-list', loadChildren: './tabs/schedule-list/schedule-list.module#ScheduleListPageModule' },
+  { path: 'schedule', loadChildren: './tabs/schedule-details/schedule-details.module#ScheduleDetailsPageModule' },
+  { path: 'schedule/:id', loadChildren: './tabs/schedule-details/schedule-details.module#ScheduleDetailsPageModule' }
+
 
 
 
