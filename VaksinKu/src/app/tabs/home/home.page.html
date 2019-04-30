@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" style="--background:#F683FA;">
+        Logout
+      </ion-button>
+    </ion-buttons>
     <ion-title text-center>
       Vaksinku
     </ion-title>
@@ -7,7 +12,7 @@
 </ion-header>
 <ion-content>
   <div>
-    <ion-slides #mySlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)" pager="true" [options]="sliderConfig" >
+    <ion-slides #mySlider (ionSlidesDidLoad)="slidesDidLoad(mySlider)" pager="true" [options]="sliderConfig">
       <ion-slide *ngFor="let article of data?.articles | slice:0:5; let i=index" (click)="goSingleNews(article)">
         <div class="container">
           <img [src]="article.urlToImage" alt="Cinque Terre" width="1000" height="300">
@@ -23,15 +28,15 @@
         <ion-col col-2>
           <ion-card text-center padding color="danger">
             <ion-icon name="person"></ion-icon>
-              <h4>Profile</h4>
-                </ion-card>
-            </ion-col>
-          <ion-col col-2>
-              <ion-card text-center padding color="danger">
-                  <ion-icon name="paper"></ion-icon>
-                  <h4>News</h4>
-                </ion-card>
-            </ion-col>
+            <h4>Profile</h4>
+          </ion-card>
+        </ion-col>
+        <ion-col col-2>
+          <ion-card text-center padding color="danger">
+            <ion-icon name="paper"></ion-icon>
+            <h4>News</h4>
+          </ion-card>
+        </ion-col>
       </ion-row>
     </ion-grid>
   </div>

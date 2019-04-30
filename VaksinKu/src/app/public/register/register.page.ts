@@ -13,8 +13,9 @@ import { auth } from 'firebase/app';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-
+  name: string = ""
   email: string = ""
+  phone: string = ""
   password: string = ""
   cpassword: string = ""
 
@@ -31,7 +32,7 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
-    const { email, password, cpassword } = this
+    const { name, email, phone, password, cpassword } = this
     if (password !== cpassword) {
       return this.alert.presentAlert('password-doesnt-match');
     }
@@ -42,11 +43,15 @@ export class RegisterPage implements OnInit {
       this.routes.navigate(['login']);
 
       this.afStore.doc(`users/${res.user.uid}`).set({
-        email
+        name,
+        email,
+        phone,
       })
 
       this.user.setUser({
+        name,
         email,
+        phone,
         uid: res.user.uid
       })
 

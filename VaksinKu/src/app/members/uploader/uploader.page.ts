@@ -1,3 +1,4 @@
+import { ToastController } from '@ionic/angular';
 import { UserService } from './../../services/user.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +19,8 @@ export class UploaderPage implements OnInit {
     public http: Http,
     public routes: Router,
     public afStore: AngularFirestore,
-    public user: UserService
+    public user: UserService,
+    public toastCtrl: ToastController
   ) { }
 
   ngOnInit() {
@@ -28,10 +30,17 @@ export class UploaderPage implements OnInit {
     const image = this.imageURL
 
     this.afStore.doc(`users/${this.user.getUID()}`).update({
-      posts: firestore.FieldValue.arrayUnion({
-        image
-      })
+      image
     })
+    this.showToast('Image has been uploaded successfully');
+    this.routes.navigate(['members', 'uploader']);
+  }
+
+  showToast(msg) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    }).then(toast => toast.present());
   }
 
   fileChanged(event) {

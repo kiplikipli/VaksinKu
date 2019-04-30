@@ -1,6 +1,7 @@
 import { HomeSliderService } from './home-slider.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  data:any;
+  data: any;
 
-  constructor(private sliderService : HomeSliderService, private routes : Router) { }
+  constructor(private sliderService: HomeSliderService, private routes: Router, public authService: AuthenticationService) { }
 
   sliderConfig = {
 
+  }
+
+  logout() {
+    this.authService.logout();
+    this.routes.navigate(['tabs']);
   }
 
   slidesDidLoad(slides) {
@@ -21,14 +27,14 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.sliderService.getNews('everything?q=vaksin').subscribe(data=>{
+    this.sliderService.getNews('everything?q=vaksin').subscribe(data => {
       console.log(data);
       this.data = data;
     })
   }
 
-  goSingleNews(article){
-    this.routes.navigate(['tabs','tabs','news']);
+  goSingleNews(article) {
+    this.routes.navigate(['tabs', 'tabs', 'news']);
   }
 
 }

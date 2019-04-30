@@ -18,7 +18,9 @@ const API_URL = environment.apiVaksinku;
 })
 export class LoginPage implements OnInit {
 
+  name: string = ""
   email: string = ""
+  phone: string = ""
   password: string = ""
 
   constructor(
@@ -37,13 +39,15 @@ export class LoginPage implements OnInit {
   }
 
   async login() {
-    const { email, password } = this
+    const { name, email, phone, password } = this
     try {
       const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password)
 
       if (res.user) {
         this.user.setUser({
+          name,
           email,
+          phone,
           uid: res.user.uid
         })
         this.authService.login()

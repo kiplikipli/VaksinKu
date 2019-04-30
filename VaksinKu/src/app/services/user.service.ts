@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 
 interface user {
+  name: string,
   email: string,
+  phone: string,
   uid: string;
 }
 
@@ -18,7 +20,7 @@ export class UserService {
     this.user = user
   }
 
-  getUID() {
+  getUID(): string {
     return this.user.uid
   }
 

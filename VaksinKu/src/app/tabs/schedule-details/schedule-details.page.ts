@@ -46,7 +46,7 @@ export class ScheduleDetailsPage implements OnInit {
 
   addSchedule() {
     this.schService.addSchedule(this.schedule).then(() => {
-      this.router.navigateByUrl('/');
+      this.router.navigate(['schedule-list']);
       this.showToast('Schedule Added')
     }, err => {
       this.showToast('There was a problem adding your schedule : (');
@@ -55,7 +55,7 @@ export class ScheduleDetailsPage implements OnInit {
 
   deleteSchedule() {
     this.schService.deleteSchedule(this.schedule.id).then(() => {
-      this.router.navigateByUrl('/');
+      this.router.navigate(['schedule-list']);
       this.showToast('Schedule Deleted');
     }, err => {
       this.showToast('There was a problem deleting your schedule :(');
@@ -64,6 +64,7 @@ export class ScheduleDetailsPage implements OnInit {
 
   updateSchedule() {
     this.schService.updateSchedule(this.schedule).then(() => {
+      this.router.navigate(['schedule-list']);
       this.showToast('Schedule Updated');
     }, err => {
       this.showToast('There was a problem updating your schedule : (');
