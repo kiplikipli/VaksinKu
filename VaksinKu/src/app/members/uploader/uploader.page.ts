@@ -33,7 +33,7 @@ export class UploaderPage implements OnInit {
       image
     })
     this.showToast('Image has been uploaded successfully');
-    this.routes.navigate(['members', 'uploader']);
+    this.routes.navigate(['tabs', 'tabs', 'profile']);
   }
 
   showToast(msg) {

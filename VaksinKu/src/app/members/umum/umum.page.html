@@ -10,8 +10,12 @@
 </ion-header>
 
 <ion-content padding center text-center slots="fixed">
-  <div (click)="changeProfilePicture()">
-    <img src="https://uwm.edu/history/wp-content/plugins/uwmpeople/images/profile-default.jpg" width="150" height="150">
+  <div *ngIf="image" (click)="changeProfilePicture()">
+    <img src="{{baseURL}}/{{image}}/" width="150" height="150">
+  </div>
+  <div *ngIf="!image" (click)="changeProfilePicture()">
+    <img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png" width="150"
+      height="150">
   </div>
   <br>
   <ion-item>

@@ -18,6 +18,7 @@ export class UmumPage implements OnInit {
   name: string = ""
   email: string = ""
   phone: string = ""
+  baseURL: string = "https://ucarecdn.com/"
 
   constructor(
     private authService: AuthenticationService,
