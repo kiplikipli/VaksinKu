@@ -1,3 +1,4 @@
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -25,7 +26,8 @@ export class UmumPage implements OnInit {
     public routes: Router,
     public afStore: AngularFirestore,
     public profileService: ProfileService,
-    public user: UserService
+    public user: UserService,
+    public afAuth: AngularFireAuth
   ) {
     this.profile = afStore.doc(`users/${user.getUID()}`)
     this.sub = this.profile.valueChanges().subscribe(profile => {
@@ -42,6 +44,7 @@ export class UmumPage implements OnInit {
 
   logout() {
     this.authService.logout();
+    this.afAuth.auth.signOut();
     this.routes.navigate(['tabs']);
   }
 
@@ -52,4 +55,5 @@ export class UmumPage implements OnInit {
   goEdit() {
     this.routes.navigate(['edit-profile'])
   }
+
 }

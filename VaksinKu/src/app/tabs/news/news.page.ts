@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
 })
 export class NewsPage implements OnInit {
 
-  data : any;
+  data: any;
 
-  constructor(private newsService : NewsService, private route : Router) { }
+  constructor(private newsService: NewsService, private route: Router) { }
 
   ngOnInit() {
-    this.newsService.getNews('everything?q=vaksin&q=imunisasi').subscribe(data=>{
+    this.newsService.getNews('everything?q=vaksin&q=imunisasi&sortBy=publishedAt').subscribe(data => {
       console.log(data);
       this.data = data;
     })
   }
 
-  goSingleNews(article){
+  goSingleNews(article) {
     this.newsService.currentArticle = article;
     this.route.navigate(['news-single']);
   }

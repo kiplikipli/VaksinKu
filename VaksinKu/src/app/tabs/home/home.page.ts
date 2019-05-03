@@ -27,7 +27,7 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.sliderService.getNews('everything?q=vaksin').subscribe(data => {
+    this.sliderService.getNews('everything?q=vaksin&q=imunisasi&sortBy=publishedAt').subscribe(data => {
       console.log(data);
       this.data = data;
     })

@@ -20,7 +20,15 @@ export class scheduleService {
 
   constructor(private afs: AngularFirestore) {
     this.schedulesColl = this.afs.collection<schedule>('schedule');
-    this.schedules = this.schedulesColl.valueChanges();
+    this.schedules = this.schedulesColl.snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
   }
 
   getSchedules(): Observable<schedule[]> {
