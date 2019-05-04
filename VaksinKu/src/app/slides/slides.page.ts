@@ -16,7 +16,7 @@ export class SlidesPage {
 
     },
     {
-      img: 'assets/img/jeje.jpg',
+      img: 'assets/img/HIY.jpg',
       titulo: 'alasan pakai vaksinku?'
 
     },

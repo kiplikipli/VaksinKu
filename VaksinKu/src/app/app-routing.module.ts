@@ -21,7 +21,8 @@ const routes: Routes = [
   { path: 'loading-example', loadChildren: './loading-example/loading-example.module#LoadingExamplePageModule' },
   { path: 'schedule-list', loadChildren: './tabs/schedule-list/schedule-list.module#ScheduleListPageModule' },
   { path: 'schedule', loadChildren: './tabs/schedule-details/schedule-details.module#ScheduleDetailsPageModule' },
-  { path: 'schedule/:id', loadChildren: './tabs/schedule-details/schedule-details.module#ScheduleDetailsPageModule' }
+  { path: 'schedule/:id', loadChildren: './tabs/schedule-details/schedule-details.module#ScheduleDetailsPageModule' },  { path: 'calendar', loadChildren: './public/calendar/calendar.module#CalendarPageModule' }
+
 
 
 
