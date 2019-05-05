@@ -38,6 +38,7 @@
     "express": "^4.16.4",
     "firebase": "^5.10.1",
     "hbs": "^4.0.4",
+    "ionic2-calendar": "^0.5.2",
     "jquery": "^3.4.0",
     "mysql": "^2.17.1",
     "rxjs": "~6.4.0",

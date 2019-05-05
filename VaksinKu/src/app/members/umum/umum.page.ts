@@ -1,3 +1,4 @@
+import { ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -27,7 +28,8 @@ export class UmumPage implements OnInit {
     public afStore: AngularFirestore,
     public profileService: ProfileService,
     public user: UserService,
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    public toastCtrl: ToastController
   ) {
     this.profile = afStore.doc(`users/${user.getUID()}`)
     this.sub = this.profile.valueChanges().subscribe(profile => {
@@ -46,6 +48,7 @@ export class UmumPage implements OnInit {
     this.authService.logout();
     this.afAuth.auth.signOut();
     this.routes.navigate(['tabs']);
+    this.showToast('You have been logged out!');
   }
 
   changeProfilePicture() {
@@ -54,6 +57,13 @@ export class UmumPage implements OnInit {
 
   goEdit() {
     this.routes.navigate(['edit-profile'])
+  }
+
+  showToast(msg) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 1500
+    }).then(toast => toast.present());
   }
 
 }

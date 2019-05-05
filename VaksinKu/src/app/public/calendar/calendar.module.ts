@@ -5,10 +5,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-
 import { CalendarPage } from './calendar.page';
 
 import { getCheckNoChangesMode } from '@angular/core/src/render3/state';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 const routes: Routes = [
   {
@@ -22,8 +22,12 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NgCalendarModule
   ],
   declarations: [CalendarPage]
 })
 
+export class CalendarPageModule {
+
+}

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title text-center>
       News
     </ion-title>
@@ -7,11 +7,11 @@
 </ion-header>
 
 <ion-content>
- <ion-card *ngFor="let article of data?.articles" (click)="goSingleNews(article)">
-   <ion-img [src]="article.urlToImage"></ion-img>
-  <ion-card-content>
-    <ion-card-title>{{article.title}}</ion-card-title>
-  </ion-card-content>
- </ion-card>
+  <ion-card *ngFor="let article of data?.articles" (click)="goSingleNews(article)">
+    <ion-img [src]="article.urlToImage"></ion-img>
+    <ion-card-content>
+      <ion-card-title>{{article.title}}</ion-card-title>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

@@ -16,7 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpModule } from '@angular/http'
 import { UserService } from './services/user.service';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
-
+import { NgCalendarModule } from 'ionic2-calendar';
 
 @NgModule({
   declarations: [AppComponent],

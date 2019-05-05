@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-buttons slot="end">
       <ion-button (click)="logout()" style="--background:#F683FA;">
         Logout
       </ion-button>
     </ion-buttons>
-    <ion-title>My Profile</ion-title>
+    <ion-title text-center>My Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,8 @@
     <img class="rounds" alt="avatar" src="{{baseURL}}/{{image}}/" width="150" height="150">
   </div>
   <div *ngIf="!image" (click)="changeProfilePicture()">
-    <img class="rounds" alt="avatar" src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png" width="150"
+    <img class="rounds" alt="avatar"
+      src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png" width="150"
       height="150">
   </div>
   <br>

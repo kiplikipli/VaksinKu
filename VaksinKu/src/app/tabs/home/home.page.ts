@@ -1,3 +1,4 @@
+import { ToastController } from '@ionic/angular';
 import { HomeSliderService } from './home-slider.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,7 +12,12 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class HomePage implements OnInit {
   data: any;
 
-  constructor(private sliderService: HomeSliderService, private routes: Router, public authService: AuthenticationService) { }
+  constructor(
+    private sliderService: HomeSliderService,
+    private routes: Router,
+    public authService: AuthenticationService,
+    public toastCtrl: ToastController
+  ) { }
 
   sliderConfig = {
 
@@ -20,6 +26,14 @@ export class HomePage implements OnInit {
   logout() {
     this.authService.logout();
     this.routes.navigate(['tabs']);
+    this.showToast('You have been logged out!');
+  }
+
+  showToast(msg) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 1500
+    }).then(toast => toast.present());
   }
 
   slidesDidLoad(slides) {

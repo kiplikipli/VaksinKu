@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,64 +12,29 @@ export class AlertService {
 
   data: any;
 
-  constructor(public alertController: AlertController, private routes: Router) { }
+  constructor(public alertController: AlertController, private routes: Router, public toastCtrl: ToastController) { }
 
-  async presentAlertInvalidEmail() {
-    const alert = await this.alertController.create({
-      message: '<strong>Invalid Email</strong>',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-  }
-
-  async presentAlertWrongPassword() {
-    const alert = await this.alertController.create({
-      message: '<strong>Wrong Password</strong>',
-      buttons: ['OK']
-    });
-
-    await alert.present();
+  showToast(msg) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 2500
+    }).then(toast => toast.present());
   }
 
   async presentAlert(errorcode) {
     if (errorcode === "auth/invalid-email") {
-      const alert = await this.alertController.create({
-        message: '<strong>Invalid Email!</strong>',
-        buttons: ['OK']
-      });
-      await alert.present();
+      this.showToast('Please input valid email');
     } else if (errorcode === "auth/wrong-password") {
-      const alert = await this.alertController.create({
-        message: '<strong>Wrong Password!</strong>',
-        buttons: ['OK']
-      });
-      await alert.present();
+      this.showToast('Wrong Password!');
     } else if (errorcode === "auth/user-not-found") {
-      const alert = await this.alertController.create({
-        message: '<strong>User Not Found!</strong>',
-        buttons: ['OK']
-      });
-      await alert.present();
+      this.showToast('User not found!')
     } else if (errorcode === "not-login-yet") {
-      const alert = await this.alertController.create({
-        message: '<strong>Please Login First!</strong>',
-        buttons: ['OK']
-      });
-      await alert.present();
+      this.showToast('Please Login First!')
       this.routes.navigate(['login']);
     } else if (errorcode === "password-doesnt-match") {
-      const alert = await this.alertController.create({
-        message: '<strong>Password Doesnt Match!</strong>',
-        buttons: ['OK']
-      });
-      await alert.present();
+      this.showToast('Password Doesnt Match!');
     } else if (errorcode === "auth/email-already-in-use") {
-      const alert = await this.alertController.create({
-        message: '<strong>Email already in use by another account!</strong>',
-        buttons: ['OK']
-      });
-      await alert.present();
+      this.showToast('Email already in use by another account!');
     }
 
   }
