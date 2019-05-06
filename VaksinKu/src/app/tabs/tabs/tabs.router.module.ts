@@ -15,7 +15,7 @@ const routes: Routes = [
       {
         path: 'schedule',
         canActivate: [AuthGuardService],
-        loadChildren: './../../public/calendar/calendar.module#CalendarPageModule'
+        loadChildren: '../schedule-list/schedule-list.module#ScheduleListPageModule'
       },
       {
         path: 'profile',

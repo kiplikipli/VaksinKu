@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Schedule List</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title text-center>Schedule List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button [routerLink]="['/schedule']">
+    <ion-fab-button color="dark" [routerLink]="['/schedule']">
       <ion-icon name="add">
       </ion-icon>
     </ion-fab-button>
@@ -14,7 +14,9 @@
 
   <ion-list>
     <ion-item button *ngFor="let schedule of ( schedules | async )" [routerLink]="['/schedule', schedule.id]">
-      {{ schedule.hari }}
+      <ion-label type="floating">
+        {{ schedule.tempat }}
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

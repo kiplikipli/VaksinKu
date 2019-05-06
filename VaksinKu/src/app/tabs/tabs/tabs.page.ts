@@ -10,14 +10,15 @@ import { Router } from '@angular/router';
 })
 export class TabsPage implements OnInit {
 
-  constructor(private authGuard : AuthGuardService, private routes : Router, private alert : AlertService) { }
+  constructor(private authGuard: AuthGuardService, private routes: Router, private alert: AlertService) { }
 
   ngOnInit() {
   }
 
-  verifAuth(){
-    if(this.authGuard.canActivate()===false){
+  verifAuth() {
+    if (this.authGuard.canActivate() === false) {
       this.alert.presentAlert('not-login-yet');
+      this.routes.navigate(['login']);
     }
   }
 }

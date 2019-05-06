@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 export interface schedule {
   id?: string,
   hari: string,
-  waktu: string,
+  waktumulai: string,
+  waktuselesai: string,
   listvaksin: string,
   tempat: string
 }
@@ -52,7 +53,8 @@ export class scheduleService {
   updateSchedule(schedule: schedule): Promise<void> {
     return this.schedulesColl.doc(schedule.id).update({
       hari: schedule.hari,
-      waktu: schedule.waktu,
+      waktumulai: schedule.waktumulai,
+      waktuselesai: schedule.waktuselesai,
       listvaksin: schedule.listvaksin,
       tempat: schedule.tempat
     })

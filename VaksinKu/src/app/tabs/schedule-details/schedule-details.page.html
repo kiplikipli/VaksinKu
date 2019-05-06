@@ -10,11 +10,18 @@
 <ion-content>
   <ion-item>
     <ion-label position="stacked">Hari/Tanggal</ion-label>
-    <ion-input [(ngModel)]="schedule.hari"></ion-input>
+    <ion-datetime display-format="DDD, DD-MM-YYYY" pickerFormat="MMM DD" [(ngModel)]="schedule.hari">
+    </ion-datetime>
   </ion-item>
   <ion-item>
-    <ion-label position="stacked">Waktu</ion-label>
-    <ion-input [(ngModel)]="schedule.waktu"></ion-input>
+    <ion-label position="stacked">Mulai</ion-label>
+    <ion-datetime display-format="HH:mm" pickerFormat="HH mm" [(ngModel)]="schedule.waktumulai">
+    </ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Selesai</ion-label>
+    <ion-datetime display-format="HH:mm" pickerFormat="HH mm" [(ngModel)]="schedule.waktuselesai">
+    </ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">List Vaksin</ion-label>

@@ -3,7 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'umum', loadChildren: './umum/umum.module#UmumPageModule' },
-  { path: 'posyandu', loadChildren: './posyandu/posyandu.module#PosyanduPageModule' },  { path: 'uploader', loadChildren: './uploader/uploader.module#UploaderPageModule' }
+  { path: 'posyandu', loadChildren: './posyandu/posyandu.module#PosyanduPageModule' },  { path: 'uploader', loadChildren: './uploader/uploader.module#UploaderPageModule' },
+  { path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule' }
 
 ];
 

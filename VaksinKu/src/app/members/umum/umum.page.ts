@@ -19,6 +19,7 @@ export class UmumPage implements OnInit {
   sub
   name: string = ""
   email: string = ""
+  address: string = ""
   phone: string = ""
   baseURL: string = "https://ucarecdn.com/"
 
@@ -35,6 +36,7 @@ export class UmumPage implements OnInit {
     this.sub = this.profile.valueChanges().subscribe(profile => {
       this.name = profile.name
       this.email = profile.email
+      this.address = profile.address
       this.phone = profile.phone
       this.image = profile.image
     })
@@ -56,7 +58,7 @@ export class UmumPage implements OnInit {
   }
 
   goEdit() {
-    this.routes.navigate(['edit-profile'])
+    this.routes.navigate(['members', 'edit-profile'])
   }
 
   showToast(msg) {

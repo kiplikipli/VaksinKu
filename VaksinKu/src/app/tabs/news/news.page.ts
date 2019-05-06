@@ -22,7 +22,7 @@ export class NewsPage implements OnInit {
 
   goSingleNews(article) {
     this.newsService.currentArticle = article;
-    this.route.navigate(['news-single']);
+    window.open(article.url, '_system')
   }
 
 }

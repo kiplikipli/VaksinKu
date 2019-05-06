@@ -30,7 +30,6 @@ export class AlertService {
       this.showToast('User not found!')
     } else if (errorcode === "not-login-yet") {
       this.showToast('Please Login First!')
-      this.routes.navigate(['login']);
     } else if (errorcode === "password-doesnt-match") {
       this.showToast('Password Doesnt Match!');
     } else if (errorcode === "auth/email-already-in-use") {
