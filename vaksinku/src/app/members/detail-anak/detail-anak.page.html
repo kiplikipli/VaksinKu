@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detail Anak</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input [(ngModel)]="name">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Age</ion-label>
+    <ion-input [(ngModel)]="age">
+    </ion-input>
+  </ion-item>
+
+  <ion-footer>
+    <ion-toolbar color="success">
+      <ion-button expand="full" fill="clear" color="light" (click)="addSon()">
+        <ion-icon name="checkmark" slot="start"></ion-icon>
+        Add Son
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
