@@ -17,6 +17,7 @@ import { HttpModule } from '@angular/http'
 import { UserService } from './services/user.service';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { NgCalendarModule } from 'ionic2-calendar';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,7 +38,8 @@ import { NgCalendarModule } from 'ionic2-calendar';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     UserService,
-    { provide: FirestoreSettingsToken, useValue: {} }
+    { provide: FirestoreSettingsToken, useValue: {} },
+    LocalNotifications
   ],
   bootstrap: [AppComponent]
 })

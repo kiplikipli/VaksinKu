@@ -17,7 +17,7 @@ export class AlertService {
   showToast(msg) {
     this.toastCtrl.create({
       message: msg,
-      duration: 2500
+      duration: 1000
     }).then(toast => toast.present());
   }
 

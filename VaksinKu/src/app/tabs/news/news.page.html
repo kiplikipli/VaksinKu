@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-card *ngFor="let article of data?.articles" (click)="goSingleNews(article)">
     <ion-img [src]="article.urlToImage"></ion-img>
     <ion-card-content>

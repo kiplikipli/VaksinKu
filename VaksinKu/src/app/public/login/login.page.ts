@@ -23,6 +23,7 @@ export class LoginPage implements OnInit {
   address: string = ""
   phone: string = ""
   password: string = ""
+  role: string = ""
 
   constructor(
     private authService: AuthenticationService,
@@ -40,7 +41,7 @@ export class LoginPage implements OnInit {
   }
 
   async login() {
-    const { name, email, address, phone, password } = this
+    const { name, email, address, phone, role, password } = this
     try {
       const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password)
 
@@ -50,6 +51,7 @@ export class LoginPage implements OnInit {
           email,
           address,
           phone,
+          role,
           uid: res.user.uid
         })
         this.authService.login()

@@ -1,3 +1,6 @@
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { UserService } from './../../services/user.service';
+import { NotificationService } from './../../services/notification.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { scheduleService, schedule } from 'src/app/services/schedule';
@@ -10,6 +13,8 @@ import { ToastController } from '@ionic/angular';
 })
 export class ScheduleDetailsPage implements OnInit {
 
+  mainuser: AngularFirestoreDocument
+  sub
   schedule: schedule = {
     hari: '',
     waktumulai: '',
@@ -18,22 +23,34 @@ export class ScheduleDetailsPage implements OnInit {
     tempat: ''
   }
   id = null;
-
+  role: string;
+  waktunotif: any;
+  harinotif: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private schService: scheduleService,
     private toasCtrl: ToastController,
-    private router: Router
-  ) { }
+    private router: Router,
+    public notifService: NotificationService,
+    public users: UserService,
+    private afs: AngularFirestore,
+  ) {
+    this.mainuser = afs.doc(`users/${users.getUID()}`)
+  }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.sub = this.mainuser.valueChanges().subscribe(profile => {
+      this.role = profile.role
+    })
   }
 
   ionViewWillEnter() {
     if (this.id) {
       this.schService.getSchedule(this.id).subscribe(schedule => {
         this.schedule = schedule;
+        this.harinotif = new Date(this.schedule.hari);
+        this.waktunotif = new Date(this.schedule.waktumulai);
       })
     }
   }
@@ -72,6 +89,10 @@ export class ScheduleDetailsPage implements OnInit {
     });
   }
 
-
+  notifyMe() {
+    this.notifService.scheduleNotification(this.waktunotif, this.harinotif);
+    this.showToast("You'll be notified on the day");
+    this.router.navigate(['tabs', 'tabs', 'schedule'])
+  }
 
 }

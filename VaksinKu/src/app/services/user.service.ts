@@ -7,6 +7,7 @@ interface user {
   email: string,
   address: string,
   phone: string,
+  role: string,
   uid: string;
 }
 

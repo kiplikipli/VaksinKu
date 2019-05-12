@@ -25,7 +25,7 @@ export class HomePage implements OnInit {
 
   logout() {
     this.authService.logout();
-    this.routes.navigate(['tabs']);
+    this.routes.navigate(['login']);
     this.showToast('You have been logged out!');
   }
 

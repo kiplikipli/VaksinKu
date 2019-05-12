@@ -42,7 +42,7 @@
   </ion-toolbar>
 </ion-footer>
 
-<ion-footer *ngIf="schedule.id">
+<ion-footer *ngIf="schedule.id && role==='posyandu'">
   <ion-row no-padding text-center>
     <ion-col size="6">
       <ion-button expand="block" fill="outline" color="danger" (click)="deleteSchedule()">
@@ -57,4 +57,10 @@
       </ion-button>
     </ion-col>
   </ion-row>
+</ion-footer>
+
+<ion-footer *ngIf="schedule.id && role==='masyarakat'">
+  <ion-button expand="block" fill="solid" color="dark" (click)="notifyMe()">
+    Notify Me!
+  </ion-button>
 </ion-footer>

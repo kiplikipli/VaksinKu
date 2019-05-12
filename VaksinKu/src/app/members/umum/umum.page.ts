@@ -49,7 +49,7 @@ export class UmumPage implements OnInit {
   logout() {
     this.authService.logout();
     this.afAuth.auth.signOut();
-    this.routes.navigate(['tabs']);
+    this.routes.navigate(['login']);
     this.showToast('You have been logged out!');
   }
 
@@ -66,6 +66,10 @@ export class UmumPage implements OnInit {
       message: msg,
       duration: 1500
     }).then(toast => toast.present());
+  }
+
+  goDataAnak() {
+    this.routes.navigate(['members', 'data-anak']);
   }
 
 }

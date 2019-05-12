@@ -17,6 +17,7 @@ export class RegisterPage implements OnInit {
   email: string = ""
   address: string = ""
   phone: string = ""
+  role: string = ""
   password: string = ""
   cpassword: string = ""
 
@@ -33,7 +34,7 @@ export class RegisterPage implements OnInit {
   }
 
   async register() {
-    const { name, email, address, phone, password, cpassword } = this
+    const { name, email, address, phone, role, password, cpassword } = this
     if (password !== cpassword) {
       return this.alert.presentAlert('password-doesnt-match');
     }
@@ -48,6 +49,7 @@ export class RegisterPage implements OnInit {
         email,
         address,
         phone,
+        role,
       })
 
       this.user.setUser({
@@ -55,6 +57,7 @@ export class RegisterPage implements OnInit {
         email,
         address,
         phone,
+        role,
         uid: res.user.uid
       })
 

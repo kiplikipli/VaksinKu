@@ -36,6 +36,24 @@
     <ion-item>
       <ion-input type="password" value="" placeholder="Confirm Password" [(ngModel)]="cpassword"></ion-input>
     </ion-item>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="role" name="role">
+        <ion-list-header>
+          <ion-label>Register As : </ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Masyarakat</ion-label>
+          <ion-radio slot="start" value="masyarakat" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Posyandu</ion-label>
+          <ion-radio slot="start" value="posyandu"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
 
     <div id="login">
       <ion-button (click)="register()" expand="block" fill="solid" shape="round">Register</ion-button>
