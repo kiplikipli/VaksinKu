@@ -1,8 +1,10 @@
+import { AngularFirestoreDocument, AngularFirestore } from '@angular/fire/firestore';
 import { ToastController } from '@ionic/angular';
 import { HomeSliderService } from './home-slider.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +13,19 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class HomePage implements OnInit {
   data: any;
-
+  mainuser: AngularFirestoreDocument
+  sub
+  role: string;
   constructor(
     private sliderService: HomeSliderService,
     private routes: Router,
     public authService: AuthenticationService,
-    public toastCtrl: ToastController
-  ) { }
+    public toastCtrl: ToastController,
+    public users: UserService,
+    public afs: AngularFirestore,
+  ) {
+    this.mainuser = afs.doc(`users/${users.getUID()}`)
+  }
 
   sliderConfig = {
 
@@ -45,10 +53,25 @@ export class HomePage implements OnInit {
       console.log(data);
       this.data = data;
     })
+    this.sub = this.mainuser.valueChanges().subscribe(profile => {
+      this.role = profile.role
+    })
   }
 
   goSingleNews(article) {
     this.routes.navigate(['tabs', 'tabs', 'news']);
+  }
+
+  goProfile() {
+    this.routes.navigate(['tabs', 'tabs', 'profile']);
+  }
+
+  goNews() {
+    this.routes.navigate(['tabs', 'tabs', 'news']);
+  }
+
+  goSchedule() {
+    this.routes.navigate(['tabs', 'tabs', 'schedule'])
   }
 
 }

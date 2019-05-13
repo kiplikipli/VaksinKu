@@ -8,21 +8,21 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="imageURL else askImage" class="gambar">
+  <div *ngIf="imageURL" class="gambar">
     <img src="https://ucarecdn.com/{{imageURL}}/">
     <br>
     <ion-button expand="block" (click)="confirmPicture()">
       Confirm
     </ion-button>
   </div>
-  <ng-template #askImage class="container">
+  <div *ngIf="!imageURL" class="container">
     <h1>
       Choose your Profile Picture
     </h1>
     <label for="file-upload" class="custom-file-upload">
       Upload Here
     </label>
-    <input id="file-upload" type="file" accept="image/jpg,image/png" (change)="fileChanged($event)">
-  </ng-template>
+    <input id="file-upload" type="file" accept="image/*" (change)="fileChanged($event)">
+  </div>
 
 </ion-content>

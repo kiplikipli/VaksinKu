@@ -22,19 +22,44 @@
     </ion-slides>
   </div>
 
-  <div id="content">
+  <div id="content" *ngIf="role==='masyarakat'">
     <ion-grid>
       <ion-row>
-        <ion-col col-2>
-          <ion-card text-center padding color="dark">
+        <ion-col col-3>
+          <ion-card text-center padding color="dark" (click)="goNews()">
+            <ion-icon name="paper"></ion-icon>
+            <h4>News</h4>
+          </ion-card>
+        </ion-col>
+        <ion-col col-3>
+          <ion-card text-center padding color="dark" (click)="goSchedule()">
+            <ion-icon name="paper"></ion-icon>
+            <h4>Schedule</h4>
+          </ion-card>
+        </ion-col>
+        <ion-col col-3>
+          <ion-card text-center padding color="dark" (click)="goProfile()">
             <ion-icon name="person"></ion-icon>
             <h4>Profile</h4>
           </ion-card>
         </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div id="content" *ngIf="role==='posyandu'">
+    <ion-grid>
+      <ion-row>
         <ion-col col-2>
-          <ion-card text-center padding color="dark">
+          <ion-card text-center padding color="dark" (click)="goNews()">
             <ion-icon name="paper"></ion-icon>
             <h4>News</h4>
+          </ion-card>
+        </ion-col>
+        <ion-col col-2>
+          <ion-card text-center padding color="dark" (click)="goSchedule()">
+            <ion-icon name="paper"></ion-icon>
+            <h4>Schedule</h4>
           </ion-card>
         </ion-col>
       </ion-row>

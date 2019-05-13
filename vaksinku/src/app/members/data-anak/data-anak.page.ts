@@ -10,14 +10,17 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DataAnakPage implements OnInit {
 
-  mainuser: AngularFirestoreDocument
-  sub
+  sons: AngularFirestoreDocument
+  sudah: string = 'Sudah';
+  sonsData
+  status: string;
   constructor(
     public users: UserService,
     public afs: AngularFirestore,
     public router: Router
   ) {
-    this.mainuser = afs.doc(`users/${users.getUID()}`)
+    this.sons = afs.doc(`users/${users.getUID()}`)
+    this.sonsData = this.sons.valueChanges()
   }
 
   ngOnInit() {
@@ -26,4 +29,6 @@ export class DataAnakPage implements OnInit {
   goTambahAnak() {
     this.router.navigate(['members', 'detail-anak']);
   }
+
+
 }
